@@ -1,8 +1,30 @@
-// import functions and grab DOM elements
 
-// let state
+  import { customers } from './data.js';
+  import { makePurchaseFrequencyCountMap } from './data-utils.js';
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+
+  const countMap = makePurchaseFrequencyCountMap(customers);
+
+  const labels = Object.keys(countMap);
+
+
+  const data = {
+    labels: labels,
+    datasets: [{
+    label: 'FIRST TABLE',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: Object.values(countMap),
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
