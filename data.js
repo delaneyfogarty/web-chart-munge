@@ -1,4 +1,4 @@
-export default [
+export const customers = [
   {
     'id': 1,
     'first_name': 'Suzi',
@@ -15000,3 +15000,4 @@ export default [
     'customer_since': 1992
   }
 ];
+
